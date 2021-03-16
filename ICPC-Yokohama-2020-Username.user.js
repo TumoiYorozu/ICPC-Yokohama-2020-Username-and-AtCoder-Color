@@ -9,6 +9,7 @@
 // @updateURL    https://github.com/TumoiYorozu/ICPC-Yokohama-2020-Username-and-AtCoder-Color/raw/main/ICPC-Yokohama-2020-Username.user.js
 // ==/UserScript==
 
+
 function main() {
     console.log("main")
     var matches = document.querySelectorAll(".team-row");
