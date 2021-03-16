@@ -6,6 +6,7 @@
 // @author       TumoiYorozu
 // @match        https://icpcsec.firebaseapp.com/standings/
 // @grant        none
+// @updateURL    https://github.com/TumoiYorozu/ICPC-Yokohama-2020-Username-and-AtCoder-Color/raw/main/ICPC-Yokohama-2020-Username.user.js
 // ==/UserScript==
 
 const team_dic = {
