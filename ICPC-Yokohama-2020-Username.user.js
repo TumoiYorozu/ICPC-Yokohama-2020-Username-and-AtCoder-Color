@@ -11,20 +11,18 @@
 
 function main() {
     console.log("main")
-    var matches = document.querySelectorAll("#root > div > div.container > div > div.standard-standings > div:nth-child(3) > div > div");
+    var matches = document.querySelectorAll(".team-row");
     if(matches.length == 0){
-        matches = document.querySelectorAll("#root > div > div.container > div > div > div");
-        if(matches.length == 0){
-            setTimeout(main, 300);
-            return;
-        }
+        setTimeout(main, 300);
+        return;
     }
     fetch("https://raw.githubusercontent.com/TumoiYorozu/ICPC-Yokohama-2020-Username-and-AtCoder-Color/main/asia_teams.json", {cache: "no-store"}).then(res => {res.json().then(team_dic => {
         for(const e of matches){
-            var a = e.querySelector("div > div.team-right > div.team-col.team-name > span");
+            var a = e.querySelector("div.team-right > div.team-col.team-name > span");
             if(a == null){
-                a = e.querySelector("div > div > h4");
+                a = e.querySelector("div > h4");
             }
+            if(a == null) continue;
             var tname = a.innerText.split("\n")[0];
             if(tname in team_dic){
                 //a.innerHTML += "<br>" + team_dic[tname]
