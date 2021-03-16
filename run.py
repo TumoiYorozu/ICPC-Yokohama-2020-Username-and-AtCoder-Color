@@ -75,7 +75,7 @@ for idx,teamname in enumerate(df['チーム名']):
     if(teamname in asia_team_names):
         for c in user_columns:
             username = res_df[c][idx]
-            res_df[c][idx] = getUserSpan(username)
+            res_df[c][idx] = getUserSpan(username).replace("\"", "'")
             time.sleep(0.1)
             print(username, res_df[c][idx])
 
@@ -84,9 +84,9 @@ for idx,teamname in enumerate(df['チーム名']):
     if(teamname in asia_team_names):
         # s = "\'{}\'\t:[\'{}\',\t\'{}\',\t\'{}\'],".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx])
         if (res_df['コーチ，ココーチ'][idx] == ""):
-            s = "\t\'{}\'\t:\'{}, {}, {}\',".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx])
+            s = "\t\"{}\"\t:\"{}, {}, {}\",".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx])
         else:
-            s = "\t\'{}\'\t:\'{}, {}, {} ({})\',".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx], res_df['コーチ，ココーチ'][idx])
+            s = "\t\"{}\"\t:\"{}, {}, {} ({})\",".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx], res_df['コーチ，ココーチ'][idx])
         print(s)
     else:
         # print(teamname)
