@@ -63,7 +63,7 @@ def getUserSpan(username):
     return f'<a href="{ulink}">{str(uinfo)}</a>'
 
 
-url = 'https://jag-icpc.org/?2020%2FTeams%2FList'
+url = 'https://jag-icpc.org/?2021%2FTeams%2FList'
 
 df = pandas.read_html(url)[1].fillna('')[5:].reset_index(drop=True)
 res_df = df.copy()
@@ -72,7 +72,8 @@ user_columns = ['メンバー 1', 'メンバー2', 'メンバー3', 'コーチ�
 
 
 for idx,teamname in enumerate(df['チーム名']):
-    if(teamname in asia_team_names):
+    # if(teamname in asia_team_names):
+    if(True):
         for c in user_columns:
             username = res_df[c][idx]
             res_df[c][idx] = getUserSpan(username).replace("\"", "'")
@@ -81,7 +82,7 @@ for idx,teamname in enumerate(df['チーム名']):
 
 print("\nCut Here!!!!\n")
 for idx,teamname in enumerate(df['チーム名']):
-    if(teamname in asia_team_names):
+    if(True):
         # s = "\'{}\'\t:[\'{}\',\t\'{}\',\t\'{}\'],".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx])
         if (res_df['コーチ，ココーチ'][idx] == ""):
             s = "\t\"{}\"\t:\"{}, {}, {}\",".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx])
