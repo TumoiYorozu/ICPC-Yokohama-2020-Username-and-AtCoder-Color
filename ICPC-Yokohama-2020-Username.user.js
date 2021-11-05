@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         ICPC Yokohama 2020 Username and AtCoder Color
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  try to take over the world!
 // @author       TumoiYorozu
-// @match        https://icpcsec.firebaseapp.com/standings/
+// @match        http://www.yamagula.ic.i.u-tokyo.ac.jp/icpc2021/standings.html
 // @grant        none
 // @updateURL    https://github.com/TumoiYorozu/ICPC-Yokohama-2020-Username-and-AtCoder-Color/raw/main/ICPC-Yokohama-2020-Username.user.js
 // ==/UserScript==
