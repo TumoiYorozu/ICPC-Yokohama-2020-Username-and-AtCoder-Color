@@ -17,7 +17,9 @@ function main() {
         setTimeout(main, 300);
         return;
     }
-    fetch("https://raw.githubusercontent.com/TumoiYorozu/ICPC-Yokohama-2020-Username-and-AtCoder-Color/main/asia_teams.json", {cache: "no-store"}).then(res => {res.json().then(team_dic => {
+    const rand_num = Math.floor(Math.random()*114514); // for disable cache
+    fetch("https://raw.githubusercontent.com/TumoiYorozu/ICPC-Yokohama-2020-Username-and-AtCoder-Color/main/asia_teams2.json?"+rand_num, {cache: "no-store"}).then(res => {res.json().then(team_dic => {
+        console.log("team_dic", team_dic);
         for(const e of matches){
             var a = e.querySelector("div.team-right > div.team-col.team-name > span");
             if(a == null){
@@ -27,7 +29,7 @@ function main() {
             var tname = a.innerText.split("\n")[0];
             if(tname in team_dic){
                 //a.innerHTML += "<br>" + team_dic[tname]
-                a.innerHTML = a.innerHTML.replace(tname, tname + "<br>" + team_dic[tname])
+                a.innerHTML = a.innerHTML.replace(tname, tname + " ["+ team_dic[tname][0] + "]<br>" + team_dic[tname][1])
             }
         }
         for(let e of document.getElementsByClassName('user-red'    )){e.style.color="#FF0000"};
@@ -41,8 +43,10 @@ function main() {
         for(let e of document.getElementsByClassName('user-unrated')){e.style.color="#000000"};
         for(let e of document.getElementsByClassName('user-admin'  )){e.style.color="#C000C0"};
     }).catch(e => {
+        console.log("err1", e)
         setTimeout(main, 3000);
     }).catch(e => {
+        console.log("err2", e)
         setTimeout(main, 3000);
     })})
 }
