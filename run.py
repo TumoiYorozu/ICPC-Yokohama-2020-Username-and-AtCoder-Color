@@ -6,46 +6,46 @@ import datetime
 
 valid_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_'
 
-asia_team_names = ["harahara", 
-"Flip-Flop C", 
-"indian_curry", 
-"HiCoder", 
-"tsutaj", 
-"O-Jaws", 
-"Antitled", 
-"AtKoder", 
-"Give us the chair!", 
-"Heno World", 
-"salada", 
-"TigerSone.", 
-"noborito290yen", 
-"inherited nya-n", 
-"XENT", 
-"appeared", 
-"Planet Samarn", 
-"onions", 
-"xjubi_chanx", 
-"seica on the border", 
-"niu_mogu_mogu", 
-"Naphi", 
-"___ KING ___", 
-"QWE_QWE", 
-"The atama", 
-"Aobayama_dropout", 
-"Aobayama_sugarstep", 
-"good_yamikin", 
-"Poyashi", 
-"NITTC_overslept", 
-"ATELIER", 
-"nowcow", 
-"Simulated Annealing", 
-"eat_ice", 
-"ThinkMET", 
-"potetisensei", 
-"shichifuku", 
-"CEDARY", 
-"UHISHIRO", 
-"Chabashira"]
+asia_team_names = ["GridAndGrind",
+ "kamaboko",
+ "Antitled",
+ "202 Accepted",
+ "minKOstflow",
+ "KIT",
+ "Heno World",
+ "KUB1",
+ "KUSunoki",
+ "pppp",
+ "incomplete",
+ "Hyper Ryoma",
+ "-O3",
+ "TLE_WARK",
+ "Positive_yellows",
+ "seica is gone",
+ "BiWACoder",
+ "niu_mogu_mogu",
+ "Highest_Minus484",
+ "UT a.k.a Is",
+ "KOMOREBI",
+ "The atama",
+ "oraCle_MaChine",
+ "suzukaze_Aobayama",
+ "Aobayama_dropout",
+ "tonosama",
+ "tSp",
+ "KyopRo-jin",
+ "SumimaSenDesita",
+ "nowcow",
+ "ATELIER 11",
+ "NEET_aizu",
+ "ThinkMET",
+ "Cutting Tree",
+ "shichifuku",
+ "toxic",
+ "Give us sociability",
+ "MSB",
+ "YUPC",
+ "Royal Blue"]
 
 def getUserSpan(username):
     username = username.replace('@', '')
@@ -72,8 +72,8 @@ user_columns = ['メンバー 1', 'メンバー2', 'メンバー3', 'コーチ�
 
 
 for idx,teamname in enumerate(df['チーム名']):
-    # if(teamname in asia_team_names):
-    if(True):
+    if(teamname in asia_team_names):
+    # if(True):
         for c in user_columns:
             username = res_df[c][idx]
             res_df[c][idx] = getUserSpan(username).replace("\"", "'")
