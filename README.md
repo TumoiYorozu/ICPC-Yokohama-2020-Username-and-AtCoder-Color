@@ -9,3 +9,6 @@ Tampermonkey などをブラウザにインストールし、以下のリンク�
 リポジトリ名は「Yokohama-2020」ですが、Yokohama-2021年大会仕様になりました。
 
 よかったら Star をお願いします。
+
+# 追記
+[rian さんのプラグイン](https://github.com/riantkb/icpc_standing_colorizer)の方が嬉しいかも
