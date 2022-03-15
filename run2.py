@@ -221,9 +221,9 @@ for teamname in res_dict:
     if(True):
         # s = "\'{}\'\t:[\'{}\',\t\'{}\',\t\'{}\'],".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx])
         if (res_dict[teamname][4] == ""):
-            s = "\t\"{}\"\t:[\"{}\", \"{} {} {}\"],".format(teamname, res_dict[teamname][0], res_dict[teamname][1], res_dict[teamname][2], res_dict[teamname][3])
+            s = "\t\"{}\"\t:[\"{}\", \"{}, {}, {}\"],".format(teamname, res_dict[teamname][0], res_dict[teamname][1], res_dict[teamname][2], res_dict[teamname][3])
         else:
-            s = "\t\"{}\"\t:[\"{}\", \"{} {} {} ({})\"],".format(teamname, res_dict[teamname][0], res_dict[teamname][1], res_dict[teamname][2], res_dict[teamname][3], res_dict[teamname][4])
+            s = "\t\"{}\"\t:[\"{}\", \"{}, {}, {}, ({})\"],".format(teamname, res_dict[teamname][0], res_dict[teamname][1], res_dict[teamname][2], res_dict[teamname][3], res_dict[teamname][4])
             # s = "\t\"{}\"\t:\"{}, {}, {} ({})\",".format(teamname, res_df['メンバー 1'][idx], res_df['メンバー2'][idx], res_df['メンバー3'][idx], res_df['コーチ'][idx])
         print(s)
     else:
